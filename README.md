@@ -146,6 +146,29 @@ RPC Functions: (none)
 Types: (none)
 ```
 
+## vs Serena
+
+[Serena](https://github.com/oraios/serena) is another MCP server for code intelligence.
+
+| Feature | This Tool | Serena |
+|:---|:---:|:---:|
+| **Dependency graph** | ✅ | ✅ |
+| **Breaking change detection** | ✅ | ❌ |
+| **Semantic search** | ❌ | ✅ |
+| **Go to definition** | ❌ | ✅ |
+| **Startup time** | Fast | Slow (downloads via uvx) |
+| **Memory usage** | Low | High |
+
+**When to use what:**
+- **This tool**: Before editing/deleting code, checking impact
+- **Serena**: Exploring unfamiliar codebase, finding definitions
+- **Both together**: Best coverage (use Serena for exploration, this for safety checks)
+
+**If Serena is too slow:**
+- This tool can replace Serena's dependency tracking
+- For semantic search: use `grep` or Claude's built-in code search
+- For go-to-definition: use your IDE
+
 ## Status
 
 ⚠️ **As-is, no maintenance.**
