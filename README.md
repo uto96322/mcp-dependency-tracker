@@ -2,7 +2,7 @@
 
 MCP (Model Context Protocol) servers for TypeScript/JavaScript code intelligence.
 
-Built in **October-November 2025**, before Microsoft's [RPG-Encoder](https://github.com/microsoft/RPG-ZeroRepo) announcement (February 2026).
+Similar concept to Microsoft's [RPG-Encoder](https://github.com/microsoft/RPG-ZeroRepo) (incremental dependency graph, breaking change detection).
 
 ## What's Inside
 
