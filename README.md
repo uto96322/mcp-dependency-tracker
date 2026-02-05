@@ -50,7 +50,9 @@ Full-featured dependency graph analyzer:
 - **Circular dependency detection**
 - **Dead code finder**
 - **Mermaid diagram visualization**
-- **Rename refactoring support**
+- **Rename refactoring** (VSCode F2-style, across all files)
+- **Field usage tracking** (find all usages before renaming)
+- **Entry point detection** (Next.js, Node.js patterns)
 
 ### 2. code_relation_code_server.py
 Code relation extractor for Supabase projects:
@@ -111,6 +113,9 @@ claude mcp add codeRelationCode -s project -- python /path/to/code_relation_code
 | `find_dead_code` | Find unused exports |
 | `detect_circular_dependencies` | Detect circular imports |
 | `visualize_dependencies` | Generate Mermaid diagram |
+| `track_field_usage` | Track all usages of a field/property before renaming |
+| `rename_symbol` | Rename symbol across all files (VSCode F2-style) |
+| `identify_entry_points` | Auto-detect project entry points (Next.js, Node.js) |
 
 **Example:**
 ```
