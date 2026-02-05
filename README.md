@@ -17,8 +17,8 @@ Similar concept to Microsoft's [RPG-Encoder](https://github.com/microsoft/RPG-Ze
 | Manual grep for usages | Instant dependency graph |
 
 **Key Benefits**:
-- **95% less debugging** — know impact before you break things
-- **Incremental builds** — only re-parse changed files (like MS RPG-Encoder)
+- **Faster impact analysis** — know dependents instantly (no manual grep)
+- **Incremental builds** — only re-parse changed files (mtime-based caching)
 - **Breaking change detection** — warns before you remove exports
 
 ## How It Works
