@@ -147,7 +147,7 @@ def ensure_dependency_graph(project_root: str = None) -> bool:
 
             # 1단계: 하위 디렉토리에서 먼저 찾기 (우선순위)
             # 이유: 루트에 monorepo package.json이 있을 수 있지만,
-            #      실제 프로젝트는 하위 디렉토리 (studygptor-next 등)
+            #      실제 프로젝트는 하위 디렉토리 (my-app 등)
             subdirs_with_config = []
             for subdir in os.listdir(cwd):
                 subdir_path = os.path.join(cwd, subdir)

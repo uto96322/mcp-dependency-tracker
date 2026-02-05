@@ -14,7 +14,7 @@ Dependency Tracker - TypeScript/JavaScript 의존성 추적 및 Breaking Change 
 """
 
 __version__ = "2.0.0"
-__author__ = "StudyGPTor Team"
+__author__ = ""
 
 # 주요 함수 export
 from .dependency_graph import build_dependency_graph, calculate_all_dependents
