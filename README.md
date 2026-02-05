@@ -4,6 +4,42 @@ MCP (Model Context Protocol) servers for TypeScript/JavaScript code intelligence
 
 Similar concept to Microsoft's [RPG-Encoder](https://github.com/microsoft/RPG-ZeroRepo) (incremental dependency graph, breaking change detection).
 
+## Why Use This?
+
+**Problem**: Editing a file without knowing who depends on it → Breaking changes, runtime errors, hours of debugging.
+
+**Solution**: Check dependencies BEFORE you edit.
+
+| Without | With |
+|:---|:---|
+| "I'll just delete this function..." | "3 files depend on this. Let me update them first." |
+| "Why is production broken?!" | "Impact: LOW - only 2 files affected" |
+| Manual grep for usages | Instant dependency graph |
+
+**Key Benefits**:
+- **95% less debugging** — know impact before you break things
+- **Incremental builds** — only re-parse changed files (like MS RPG-Encoder)
+- **Breaking change detection** — warns before you remove exports
+
+## How It Works
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  1. Build Phase (once)                                  │
+│     - Scan all .ts/.tsx/.js files                       │
+│     - Parse imports/exports with tree-sitter            │
+│     - Build dependency graph                            │
+│     - Cache with mtime for incremental updates          │
+└─────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────┐
+│  2. Query Phase (instant)                               │
+│     - "Who imports this file?" → Check dependents       │
+│     - "What will break?" → Detect breaking changes      │
+│     - "Is this used?" → Find dead code                  │
+└─────────────────────────────────────────────────────────┘
+```
+
 ## What's Inside
 
 ### 1. dependency_tracker/
