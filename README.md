@@ -1,6 +1,6 @@
 # mcp-dependency-tracker
 
-MCP (Model Context Protocol) servers for TypeScript/JavaScript code intelligence.
+MCP (Model Context Protocol) servers for **TypeScript/JavaScript/Python** code intelligence.
 
 Similar concept to Microsoft's [RPG-Encoder](https://github.com/microsoft/RPG-ZeroRepo) (incremental dependency graph, breaking change detection).
 
@@ -26,7 +26,7 @@ Similar concept to Microsoft's [RPG-Encoder](https://github.com/microsoft/RPG-Ze
 ```
 ┌─────────────────────────────────────────────────────────┐
 │  1. Build Phase (once)                                  │
-│     - Scan all .ts/.tsx/.js files                       │
+│     - Scan all .ts/.tsx/.js/.py files                   │
 │     - Parse imports/exports with tree-sitter            │
 │     - Build dependency graph                            │
 │     - Cache with mtime for incremental updates          │
